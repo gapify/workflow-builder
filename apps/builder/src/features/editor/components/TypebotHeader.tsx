@@ -224,16 +224,16 @@ const LeftElements = ({
             </Tooltip>
           </HStack>
         )}
-        <Button
-          leftIcon={<BuoyIcon />}
-          onClick={onHelpClick}
-          size="sm"
-          iconSpacing={{ base: 0, xl: 2 }}
-        >
-          <chakra.span display={{ base: "none", xl: "inline" }}>
-            {t("editor.header.helpButton.label")}
-          </chakra.span>
-        </Button>
+        {/*<Button*/}
+        {/*  leftIcon={<BuoyIcon />}*/}
+        {/*  onClick={onHelpClick}*/}
+        {/*  size="sm"*/}
+        {/*  iconSpacing={{ base: 0, xl: 2 }}*/}
+        {/*>*/}
+        {/*  <chakra.span display={{ base: "none", xl: "inline" }}>*/}
+        {/*    {t("editor.header.helpButton.label")}*/}
+        {/*  </chakra.span>*/}
+        {/*</Button>*/}
       </HStack>
       {isSavingLoading && (
         <HStack>
@@ -275,9 +275,9 @@ const RightElements = ({
         typebotId={typebot?.id}
         isResultsDisplayed={isResultsDisplayed}
       />
-      <Flex pos="relative">
-        <ShareTypebotButton isLoading={isNotDefined(typebot)} />
-      </Flex>
+      {/*<Flex pos="relative">*/}
+      {/*  <ShareTypebotButton isLoading={isNotDefined(typebot)} />*/}
+      {/*</Flex>*/}
       {router.pathname.includes("/edit") &&
         rightPanel !== RightPanel.PREVIEW && (
           <Button
@@ -331,33 +331,33 @@ const TypebotNav = ({
       >
         {t("editor.header.flowButton.label")}
       </Button>
-      <Button
-        as={Link}
-        href={`/typebots/${typebotId}/theme`}
-        colorScheme={router.pathname.endsWith("theme") ? "blue" : "gray"}
-        variant={router.pathname.endsWith("theme") ? "outline" : "ghost"}
-        size="sm"
-      >
-        {t("editor.header.themeButton.label")}
-      </Button>
-      <Button
-        as={Link}
-        href={`/typebots/${typebotId}/settings`}
-        colorScheme={router.pathname.endsWith("settings") ? "blue" : "gray"}
-        variant={router.pathname.endsWith("settings") ? "outline" : "ghost"}
-        size="sm"
-      >
-        {t("editor.header.settingsButton.label")}
-      </Button>
-      <Button
-        as={Link}
-        href={`/typebots/${typebotId}/share`}
-        colorScheme={router.pathname.endsWith("share") ? "blue" : "gray"}
-        variant={router.pathname.endsWith("share") ? "outline" : "ghost"}
-        size="sm"
-      >
-        {t("share.button.label")}
-      </Button>
+      {/*<Button*/}
+      {/*  as={Link}*/}
+      {/*  href={`/typebots/${typebotId}/theme`}*/}
+      {/*  colorScheme={router.pathname.endsWith("theme") ? "blue" : "gray"}*/}
+      {/*  variant={router.pathname.endsWith("theme") ? "outline" : "ghost"}*/}
+      {/*  size="sm"*/}
+      {/*>*/}
+      {/*  {t("editor.header.themeButton.label")}*/}
+      {/*</Button>*/}
+      {/*<Button*/}
+      {/*  as={Link}*/}
+      {/*  href={`/typebots/${typebotId}/settings`}*/}
+      {/*  colorScheme={router.pathname.endsWith("settings") ? "blue" : "gray"}*/}
+      {/*  variant={router.pathname.endsWith("settings") ? "outline" : "ghost"}*/}
+      {/*  size="sm"*/}
+      {/*>*/}
+      {/*  {t("editor.header.settingsButton.label")}*/}
+      {/*</Button>*/}
+      {/*<Button*/}
+      {/*  as={Link}*/}
+      {/*  href={`/typebots/${typebotId}/share`}*/}
+      {/*  colorScheme={router.pathname.endsWith("share") ? "blue" : "gray"}*/}
+      {/*  variant={router.pathname.endsWith("share") ? "outline" : "ghost"}*/}
+      {/*  size="sm"*/}
+      {/*>*/}
+      {/*  {t("share.button.label")}*/}
+      {/*</Button>*/}
       {isResultsDisplayed && (
         <Button
           as={Link}

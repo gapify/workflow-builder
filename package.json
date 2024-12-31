@@ -53,5 +53,8 @@
     "isolated-vm",
     "prisma",
     "sharp"
-  ]
+  ],
+  "dependencies": {
+    "nookies": "^2.5.2"
+  }
 }

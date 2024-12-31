@@ -26,7 +26,6 @@ export const DashboardHeader = () => {
 
   const handleCreateNewWorkspace = () =>
     createWorkspace(user?.name ?? undefined);
-
   return (
     <Flex w="full" borderBottomWidth="1px" justify="center">
       <Flex
@@ -57,15 +56,15 @@ export const DashboardHeader = () => {
               />
             </ParentModalProvider>
           )}
-          {!workspace?.isPastDue && (
-            <Button
-              leftIcon={<SettingsIcon />}
-              onClick={onOpen}
-              isLoading={isNotDefined(workspace)}
-            >
-              {t("dashboard.header.settingsButton.label")}
-            </Button>
-          )}
+          {/*{!workspace?.isPastDue && (*/}
+          {/*  <Button*/}
+          {/*    leftIcon={<SettingsIcon />}*/}
+          {/*    onClick={onOpen}*/}
+          {/*    isLoading={isNotDefined(workspace)}*/}
+          {/*  >*/}
+          {/*    {t("dashboard.header.settingsButton.label")}*/}
+          {/*  </Button>*/}
+          {/*)}*/}
           <WorkspaceDropdown
             currentWorkspace={workspace}
             onLogoutClick={logOut}

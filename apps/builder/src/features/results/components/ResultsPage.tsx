@@ -79,40 +79,40 @@ export const ResultsPage = () => {
       />
       <TypebotHeader />
       <Flex h="full" w="full" bgColor={bgColor}>
-        <Flex
-          pos="absolute"
-          zIndex={2}
-          w="full"
-          justifyContent="center"
-          h="60px"
-          display={["none", "flex"]}
-        >
-          <HStack maxW="1600px" w="full" px="4">
-            <Button
-              as={Link}
-              colorScheme={!isAnalytics ? "blue" : "gray"}
-              variant={!isAnalytics ? "outline" : "ghost"}
-              size="sm"
-              href={`/typebots/${typebot?.id}/results`}
-            >
-              <Text>Submissions</Text>
-              {(stats?.totalStarts ?? 0) > 0 && (
-                <Tag size="sm" colorScheme="blue" ml="1">
-                  {stats?.totalStarts}
-                </Tag>
-              )}
-            </Button>
-            <Button
-              as={Link}
-              colorScheme={isAnalytics ? "blue" : "gray"}
-              variant={isAnalytics ? "outline" : "ghost"}
-              href={`/typebots/${typebot?.id}/results/analytics`}
-              size="sm"
-            >
-              Analytics
-            </Button>
-          </HStack>
-        </Flex>
+        {/*<Flex*/}
+        {/*  pos="absolute"*/}
+        {/*  zIndex={2}*/}
+        {/*  w="full"*/}
+        {/*  justifyContent="center"*/}
+        {/*  h="60px"*/}
+        {/*  display={["none", "flex"]}*/}
+        {/*>*/}
+        {/*  <HStack maxW="1600px" w="full" px="4">*/}
+        {/*    <Button*/}
+        {/*      as={Link}*/}
+        {/*      colorScheme={!isAnalytics ? "blue" : "gray"}*/}
+        {/*      variant={!isAnalytics ? "outline" : "ghost"}*/}
+        {/*      size="sm"*/}
+        {/*      href={`/typebots/${typebot?.id}/results`}*/}
+        {/*    >*/}
+        {/*      <Text>Submissions</Text>*/}
+        {/*      {(stats?.totalStarts ?? 0) > 0 && (*/}
+        {/*        <Tag size="sm" colorScheme="blue" ml="1">*/}
+        {/*          {stats?.totalStarts}*/}
+        {/*        </Tag>*/}
+        {/*      )}*/}
+        {/*    </Button>*/}
+        {/*    <Button*/}
+        {/*      as={Link}*/}
+        {/*      colorScheme={isAnalytics ? "blue" : "gray"}*/}
+        {/*      variant={isAnalytics ? "outline" : "ghost"}*/}
+        {/*      href={`/typebots/${typebot?.id}/results/analytics`}*/}
+        {/*      size="sm"*/}
+        {/*    >*/}
+        {/*      Analytics*/}
+        {/*    </Button>*/}
+        {/*  </HStack>*/}
+        {/*</Flex>*/}
         <Flex pt={["10px", "60px"]} w="full" justify="center">
           {workspace &&
             publishedTypebot &&

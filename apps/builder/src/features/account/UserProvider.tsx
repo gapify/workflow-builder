@@ -1,10 +1,10 @@
 import { useToast } from "@/hooks/useToast";
 import { useColorMode } from "@chakra-ui/react";
 import { setUser as setSentryUser } from "@sentry/nextjs";
+import { parseCookies } from 'nookies';
 import { env } from "@typebot.io/env";
 import { isDefined, isNotDefined } from "@typebot.io/lib/utils";
 import type { User } from "@typebot.io/schemas/features/user/schema";
-import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import type { ReactNode } from "react";
 import { createContext, useEffect, useState } from "react";
@@ -27,8 +27,8 @@ const debounceTimeout = 1000;
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
-  const { data: session, status } = useSession();
   const [user, setUser] = useState<User | undefined>();
+  const [status, setStatus] = useState<string>('loading');
   const { showToast } = useToast();
   const [currentWorkspaceId, setCurrentWorkspaceId] = useState<string>();
   const { setColorMode } = useColorMode();
@@ -53,17 +53,25 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   }, [setColorMode, user?.preferredAppAppearance]);
 
   useEffect(() => {
-    if (isDefined(user) || isNotDefined(session)) return;
     setCurrentWorkspaceId(
       localStorage.getItem("currentWorkspaceId") ?? undefined,
     );
-    const parsedUser = session.user as User;
+
+    // get session from cookies
+    const cookies = parseCookies();
+    const user = cookies['typebot_user'];
+    if (user === 'undefined') {
+      setStatus('unauthenticated');
+      return;
+    }
+    const parsedUser = JSON.parse(user) as User;
+
     setUser(parsedUser);
 
     if (parsedUser?.id) {
       setSentryUser({ id: parsedUser.id });
     }
-  }, [session, user]);
+  }, []);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -104,7 +112,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const logOut = () => {
-    signOut();
     setUser(undefined);
   };
 

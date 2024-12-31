@@ -169,15 +169,15 @@ export const FolderContent = ({ folder }: Props) => {
           <Heading as="h1">{folder?.name}</Heading>
         </Skeleton>
         <Stack>
-          <HStack>
-            {folder && <BackButton id={folder.parentFolderId} />}
-            {currentRole !== WorkspaceRole.GUEST && (
-              <CreateFolderButton
-                onClick={handleCreateFolder}
-                isLoading={isCreatingFolder || isFolderLoading}
-              />
-            )}
-          </HStack>
+          {/*<HStack>*/}
+          {/*  {folder && <BackButton id={folder.parentFolderId} />}*/}
+          {/*  {currentRole !== WorkspaceRole.GUEST && (*/}
+          {/*    <CreateFolderButton*/}
+          {/*      onClick={handleCreateFolder}*/}
+          {/*      isLoading={isCreatingFolder || isFolderLoading}*/}
+          {/*    />*/}
+          {/*  )}*/}
+          {/*</HStack>*/}
           <Wrap spacing={4}>
             {currentRole !== WorkspaceRole.GUEST && (
               <CreateBotButton

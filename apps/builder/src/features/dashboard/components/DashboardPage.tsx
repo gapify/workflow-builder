@@ -53,7 +53,7 @@ export const DashboardPage = () => {
       });
     }
   }, [createCustomCheckoutSession, router.query, user, workspace]);
-
+  console.log(workspace);
   return (
     <Stack minH="100vh">
       <Seo title={workspace?.name ?? t("dashboard.title")} />
