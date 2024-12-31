@@ -64,7 +64,7 @@ export const WorkspaceProvider = ({
       enabled: !!user,
     },
   );
-  console.log('workspacesData : ', workspacesData);
+  console.log("workspacesData : ", workspacesData);
   const workspaces = useMemo(
     () => workspacesData?.workspaces ?? [],
     [workspacesData?.workspaces],

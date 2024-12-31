@@ -95,7 +95,8 @@
     "unsplash-js": "7.0.18",
     "use-debounce": "9.0.4",
     "zod-validation-error": "3.0.3",
-    "zustand": "4.5.0"
+    "zustand": "4.5.0",
+    "nookies": "^2.5.2"
   },
   "devDependencies": {
     "@chakra-ui/styled-system": "2.9.2",

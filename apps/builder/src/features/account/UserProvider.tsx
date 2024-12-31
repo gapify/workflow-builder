@@ -1,11 +1,11 @@
 import { useToast } from "@/hooks/useToast";
 import { useColorMode } from "@chakra-ui/react";
 import { setUser as setSentryUser } from "@sentry/nextjs";
-import { parseCookies } from 'nookies';
 import { env } from "@typebot.io/env";
 import { isDefined, isNotDefined } from "@typebot.io/lib/utils";
 import type { User } from "@typebot.io/schemas/features/user/schema";
 import { useRouter } from "next/router";
+import { parseCookies } from "nookies";
 import type { ReactNode } from "react";
 import { createContext, useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
@@ -28,7 +28,7 @@ const debounceTimeout = 1000;
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   const [user, setUser] = useState<User | undefined>();
-  const [status, setStatus] = useState<string>('loading');
+  const [status, setStatus] = useState<string>("loading");
   const { showToast } = useToast();
   const [currentWorkspaceId, setCurrentWorkspaceId] = useState<string>();
   const { setColorMode } = useColorMode();
@@ -59,9 +59,9 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
     // get session from cookies
     const cookies = parseCookies();
-    const user = cookies['typebot_user'];
-    if (user === 'undefined') {
-      setStatus('unauthenticated');
+    const user = cookies["typebot_user"];
+    if (user === "undefined") {
+      setStatus("unauthenticated");
       return;
     }
     const parsedUser = JSON.parse(user) as User;

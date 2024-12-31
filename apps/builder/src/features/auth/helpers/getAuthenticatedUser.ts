@@ -10,20 +10,20 @@ export const getAuthenticatedUser = async (
   res: NextApiResponse,
 ): Promise<Prisma.User | undefined> => {
   const bearerToken = extractBearerToken(req);
-  const session = req.cookies['typebot_session'];
+  const session = req.cookies["typebot_session"];
   const sessionObj = await prisma.session.findFirst({
     where: {
-      sessionToken: session
-    }
-  })
-  console.log('SESSION:', session);
+      sessionToken: session,
+    },
+  });
+  console.log("SESSION:", session);
   if (!sessionObj) return;
   const user = await prisma.user.findFirst({
     where: {
-      id: sessionObj?.userId
-    }
-  })
-  console.log('USERRRR:', user);
+      id: sessionObj?.userId,
+    },
+  });
+  console.log("USERRRR:", user);
   if (bearerToken) return authenticateByToken(bearerToken);
   if (!user || !("id" in user)) return;
   Sentry.setUser({ id: user.id });

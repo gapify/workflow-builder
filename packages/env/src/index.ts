@@ -449,9 +449,9 @@ const partykitEnv = {
 
 const chatwootEnv = {
   server: {
-    CHATWOOT_API_URL: z.string().url()
-  }
-}
+    CHATWOOT_API_URL: z.string().url(),
+  },
+};
 export const env = createEnv({
   server: {
     ...baseEnv.server,
@@ -472,7 +472,7 @@ export const env = createEnv({
     ...sentryEnv.server,
     ...telemetryEnv.server,
     ...keycloakEnv.server,
-    ...chatwootEnv.server
+    ...chatwootEnv.server,
   },
   client: {
     ...baseEnv.client,

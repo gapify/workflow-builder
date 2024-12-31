@@ -42,9 +42,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     }
   }, [router.pathname]);
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
   const typebotId = router.query.typebotId?.toString();
 
   return (

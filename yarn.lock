@@ -8504,6 +8504,7 @@ buffer-from@^1.0.0:
     next-auth "4.24.8"
     nextjs-cors "2.1.2"
     nodemailer "6.9.15"
+    nookies "^2.5.2"
     nprogress "0.2.0"
     nuqs "^1.19.3"
     openai "4.52.7"
