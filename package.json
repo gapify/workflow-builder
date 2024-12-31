@@ -53,6 +53,5 @@
     "isolated-vm",
     "prisma",
     "sharp"
-  ],
-  "dependencies": {}
+  ]
 }
